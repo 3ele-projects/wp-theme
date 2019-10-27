@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+      - ./db:/var/lib/mysql
+      
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress2
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wordpress:
+     depends_on:
+       - db
+
+     image: conetix/wordpress-with-wp-cli
+     ports:
+       - "8000:80"
+     restart: always
+     volumes:
+            - .wordpress/plugins:/var/www/html/wp-content/plugins
+            - .wordpress/themes:/var/www/html/wp-content/themes
+            - .wordpress/uploads:/var/www/html/wp-content/uploads
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       WORDPRESS_DB_NAME: wordpress
+       # command: wp scaffold _s ele --theme_name=3ele_Agentur --activate
+    
+volumes:
+    data_db:

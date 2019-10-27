@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.wordpress/plugins/3eleOne" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.wordpress/plugins/advanced-custom-fields-wpcli" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/.wordpress/themes/ele2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Font-Awesome-SVG-PNG" vcs="Git" />
+  </component>
+</project>
